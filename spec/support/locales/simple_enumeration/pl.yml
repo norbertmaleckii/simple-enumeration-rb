@@ -1,0 +1,15 @@
+pl:
+  simple_enumeration:
+    payment_status:
+      unpaid:
+        text: "Nieopłacone"
+        color: yellow
+      failed:
+        text: "Zakończone niepowodzeniem"
+        color: red
+      expired:
+        text: "Wygasłe"
+        color: black
+      completed:
+        text: "Zapłacone"
+        color: green
