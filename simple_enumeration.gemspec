@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Norbert Małecki']
   spec.email         = ['norbert.malecki@icloud.com']
 
-  spec.summary       = 'Enumeration'
-  spec.description   = 'Enumeration'
+  spec.summary       = 'Enumerations system for Ruby with awesome features!'
+  spec.description   = 'Helps you to declare enumerations in a very simple and flexible way. Define your enumerations in classes, it means you can add new behaviour and also reuse them.'
   spec.homepage      = 'https://github.com/norbertmaleckii/simple-enumeration-rb'
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 2.5.0'
