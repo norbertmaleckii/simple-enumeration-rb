@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require 'simple_enumeration'
-
-class PaymentStatus < SimpleEnumeration::Entity
+class PaymentStatusEnumeration < SimpleEnumeration::Entity
   define_basic_collection(
     :unpaid,
     :failed,
@@ -28,5 +26,19 @@ class PaymentStatus < SimpleEnumeration::Entity
     else
       unapid
     end
+  end
+end
+
+class Order
+  attr_accessor :payment_status
+
+  def initialize(payment_status:)
+    @payment_status = payment_status
+  end
+
+  def payment_status_enumeration
+    @payment_status_enumeration ||= PaymentStatusEnumeration.new(
+      converted_value: payment_status
+    )
   end
 end
