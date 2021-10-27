@@ -9,7 +9,11 @@ Gem::Specification.new do |spec|
   spec.email         = ['norbert.malecki@icloud.com']
 
   spec.summary       = 'Enumerations system for Ruby with awesome features!'
-  spec.description   = 'Helps you to declare enumerations in a very simple and flexible way. Define your enumerations in classes, it means you can add new behaviour and also reuse them.'
+  spec.description   = [
+    'Helps you to declare enumerations in a very simple and flexible way.',
+    'Define your enumerations in classes, it means you can add new behaviour and also reuse them.'
+  ].join(' ')
+
   spec.homepage      = 'https://github.com/norbertmaleckii/simple-enumeration-rb'
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 2.5.0'
@@ -23,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
   end
+
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']

@@ -13,6 +13,7 @@ Style/Documentation:
 
 Metrics/BlockLength:
   Exclude:
+    - simple_enumeration.gemspec
     - "spec/**/*.rb"
 
 RSpec/MultipleExpectations:
