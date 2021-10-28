@@ -165,26 +165,22 @@ Initially, there is no special dsl extension, but we can simply do that:
 # ActiveRecord class
 #
 class Order < ApplicationRecord
-  def payment_status_enumeration
-    @payment_status_enumeration ||= PaymentStatusEnumeration.new(
-      converted_value: payment_status
-    )
-  end
+  extend SimpleEnumeration
+
+  define_simple_enumeration :payment_status
 end
 
 # Plain Ruby class
 #
 class Order
+  extend SimpleEnumeration
+
+  define_simple_enumeration :payment_status
+
   attr_accessor :payment_status
 
   def initialize(payment_status:)
     @payment_status = payment_status
-  end
-
-  def payment_status_enumeration
-    @payment_status_enumeration ||= PaymentStatusEnumeration.new(
-      converted_value: payment_status
-    )
   end
 end
 ```

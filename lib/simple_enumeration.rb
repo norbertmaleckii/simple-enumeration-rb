@@ -18,6 +18,10 @@ require_relative 'simple_enumeration/collections/basic_factory'
 require_relative 'simple_enumeration/collections/custom_factory'
 require_relative 'simple_enumeration/collection_methods_definer'
 require_relative 'simple_enumeration/entity'
+require_relative 'simple_enumeration/define_simple_enumeration'
 
 module SimpleEnumeration
+  def self.extended(receiver)
+    receiver.extend DefineSimpleEnumeration
+  end
 end

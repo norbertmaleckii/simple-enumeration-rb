@@ -30,15 +30,13 @@ class PaymentStatusEnumeration < SimpleEnumeration::Entity
 end
 
 class Order
+  extend SimpleEnumeration
+
+  define_simple_enumeration :payment_status
+
   attr_accessor :payment_status
 
   def initialize(payment_status:)
     @payment_status = payment_status
-  end
-
-  def payment_status_enumeration
-    @payment_status_enumeration ||= PaymentStatusEnumeration.new(
-      converted_value: payment_status
-    )
   end
 end
