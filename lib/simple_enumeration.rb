@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'active_support/core_ext/string/filters'
 require 'active_support/core_ext/string/inflections'
 require 'callee'
 require 'dry/initializer'

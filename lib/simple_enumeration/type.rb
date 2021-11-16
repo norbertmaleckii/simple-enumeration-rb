@@ -17,11 +17,11 @@ module SimpleEnumeration
     end
 
     def self.type_value_for_value_method_name(method_name)
-      method_name.to_s.remove(VALUE_METHOD_NAME_SUFFIX)
+      method_name.to_s.gsub(VALUE_METHOD_NAME_SUFFIX, '')
     end
 
     def self.type_value_for_value_predicate_method_name(method_name)
-      method_name.to_s.remove(VALUE_PREDICATE_METHOD_NAME_SUFFIX)
+      method_name.to_s.gsub(VALUE_PREDICATE_METHOD_NAME_SUFFIX, '')
     end
 
     def method_name
@@ -54,7 +54,7 @@ module SimpleEnumeration
         raise: true,
         scope: [
           'simple_enumeration',
-          enum_class.name.remove('Enumeration').underscore
+          enum_class.name.gsub('Enumeration', '').underscore
         ].join('.')
       )
     end

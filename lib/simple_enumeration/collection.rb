@@ -16,23 +16,23 @@ module SimpleEnumeration
     HUMANIZED_METHOD_NAME_SUFFIX = '_collection_humanized'
 
     def self.collection_name_from_method_name(method_name)
-      method_name.to_s.remove(METHOD_NAME_SUFFIX)
+      method_name.to_s.gsub(METHOD_NAME_SUFFIX, '')
     end
 
     def self.collection_name_from_value_method_name(method_name)
-      method_name.to_s.remove(VALUE_METHOD_NAME_SUFFIX)
+      method_name.to_s.gsub(VALUE_METHOD_NAME_SUFFIX, '')
     end
 
     def self.collection_name_from_value_predicate_method_name(method_name)
-      method_name.to_s.remove(VALUE_PREDICATE_METHOD_NAME_SUFFIX)
+      method_name.to_s.gsub(VALUE_PREDICATE_METHOD_NAME_SUFFIX, '')
     end
 
     def self.collection_name_from_for_select_method_name(method_name)
-      method_name.to_s.remove(FOR_SELECT_METHOD_NAME_SUFFIX)
+      method_name.to_s.gsub(FOR_SELECT_METHOD_NAME_SUFFIX, '')
     end
 
     def self.collection_name_from_humanized_method_name(method_name)
-      method_name.to_s.remove(HUMANIZED_METHOD_NAME_SUFFIX)
+      method_name.to_s.gsub(HUMANIZED_METHOD_NAME_SUFFIX, '')
     end
 
     def method_name
