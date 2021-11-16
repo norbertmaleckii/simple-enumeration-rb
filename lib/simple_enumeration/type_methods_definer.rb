@@ -2,11 +2,17 @@
 
 module SimpleEnumeration
   class TypeMethodsDefiner
-    include Callee
+    attr_reader :enum_class, :collection, :type
 
-    option :enum_class
-    option :collection
-    option :type
+    def initialize(enum_class:, collection:, type:)
+      @enum_class = enum_class
+      @collection = collection
+      @type = type
+    end
+
+    def self.call(*params, **options, &block)
+      new(*params, **options).call(&block)
+    end
 
     def call
       define_singleton_type_method

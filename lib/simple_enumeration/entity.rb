@@ -2,9 +2,11 @@
 
 module SimpleEnumeration
   class Entity
-    extend Dry::Initializer
+    attr_reader :converted_value
 
-    option :converted_value
+    def initialize(converted_value:)
+      @converted_value = converted_value
+    end
 
     def self.i18n_scope
       [

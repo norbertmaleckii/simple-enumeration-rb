@@ -2,12 +2,14 @@
 
 module SimpleEnumeration
   class Type
-    extend Dry::Initializer
+    attr_reader :definition, :value, :converted_value, :enum_class
 
-    option :definition
-    option :value
-    option :converted_value
-    option :enum_class
+    def initialize(definition:, value:, converted_value:, enum_class:)
+      @definition = definition
+      @value = value
+      @converted_value = converted_value
+      @enum_class = enum_class
+    end
 
     VALUE_METHOD_NAME_SUFFIX = '_value'
     VALUE_PREDICATE_METHOD_NAME_SUFFIX = '_value?'

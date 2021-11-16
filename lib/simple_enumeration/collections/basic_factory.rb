@@ -3,14 +3,19 @@
 module SimpleEnumeration
   module Collections
     class BasicFactory
-      include Callee
+      attr_reader :enum_class, :definitions
 
-      option :enum_class
-      option :collection_name, default: proc { :basic }
-      option :definitions
+      def initialize(enum_class:, definitions:)
+        @enum_class = enum_class
+        @definitions = definitions
+      end
+
+      def self.call(*params, **options, &block)
+        new(*params, **options).call(&block)
+      end
 
       def call
-        collection = Collection.new(name: collection_name)
+        collection = Collection.new(name: :basic)
 
         CollectionMethodsDefiner.call(enum_class: enum_class, collection: collection)
 

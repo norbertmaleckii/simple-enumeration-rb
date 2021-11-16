@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'callee'
-require 'dry/initializer'
 require 'i18n'
 
 require_relative 'simple_enumeration/version'

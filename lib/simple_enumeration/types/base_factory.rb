@@ -3,10 +3,16 @@
 module SimpleEnumeration
   module Types
     class BaseFactory
-      include Callee
+      attr_reader :enum_class, :definition
 
-      option :definition
-      option :enum_class
+      def initialize(enum_class:, definition:)
+        @enum_class = enum_class
+        @definition = definition
+      end
+
+      def self.call(*params, **options, &block)
+        new(*params, **options).call(&block)
+      end
 
       def call
         Type.new(

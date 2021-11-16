@@ -43,9 +43,6 @@ RSpec.describe SimpleEnumeration::Entity do
           set_collection
           define_basic_collection
           define_custom_collection
-          dry_initializer
-          param
-          option
           name
           i18n_scope
         ]
@@ -270,9 +267,6 @@ RSpec.describe SimpleEnumeration::Entity do
           set_collection
           define_basic_collection
           define_custom_collection
-          dry_initializer
-          param
-          option
           name
           i18n_scope
           finished_collection

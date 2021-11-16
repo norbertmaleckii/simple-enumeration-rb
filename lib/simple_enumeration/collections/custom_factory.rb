@@ -3,11 +3,17 @@
 module SimpleEnumeration
   module Collections
     class CustomFactory
-      include Callee
+      attr_reader :enum_class, :collection_name, :types
 
-      option :enum_class
-      option :collection_name
-      option :types
+      def initialize(enum_class:, collection_name:, types:)
+        @enum_class = enum_class
+        @collection_name = collection_name
+        @types = types
+      end
+
+      def self.call(*params, **options, &block)
+        new(*params, **options).call(&block)
+      end
 
       def call
         collection = Collection.new(name: collection_name)

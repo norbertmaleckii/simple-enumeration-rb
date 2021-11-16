@@ -2,10 +2,16 @@
 
 module SimpleEnumeration
   class TypeBuilder
-    include Callee
+    attr_reader :enum_class, :definition
 
-    option :enum_class
-    option :definition
+    def initialize(enum_class:, definition:)
+      @enum_class = enum_class
+      @definition = definition
+    end
+
+    def self.call(*params, **options, &block)
+      new(*params, **options).call(&block)
+    end
 
     def call
       factory_klass.call(

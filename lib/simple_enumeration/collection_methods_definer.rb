@@ -2,10 +2,16 @@
 
 module SimpleEnumeration
   class CollectionMethodsDefiner
-    include Callee
+    attr_reader :enum_class, :collection
 
-    option :enum_class
-    option :collection
+    def initialize(enum_class:, collection:)
+      @enum_class = enum_class
+      @collection = collection
+    end
+
+    def self.call(*params, **options, &block)
+      new(*params, **options).call(&block)
+    end
 
     def call
       set_collection

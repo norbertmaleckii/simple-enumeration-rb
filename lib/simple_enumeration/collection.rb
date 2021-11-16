@@ -2,12 +2,14 @@
 
 module SimpleEnumeration
   class Collection
-    extend Dry::Initializer
-
     MissingTypeError = Class.new(StandardError)
 
-    option :name
-    option :types, default: proc { {} }
+    attr_reader :name, :types
+
+    def initialize(name:, types: {})
+      @name = name
+      @types = types
+    end
 
     METHOD_NAME_SUFFIX = '_collection'
     VALUE_METHOD_NAME_SUFFIX = '_collection_values'
