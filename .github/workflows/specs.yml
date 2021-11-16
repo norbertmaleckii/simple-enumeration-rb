@@ -5,12 +5,20 @@ on: [push,pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby:
+          - "3.0"
+          - "2.7"
+          - "2.6"
+          - "2.5"
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.2
+          ruby-version: ${{matrix.ruby}}
           bundler-cache: true
       - name: Run specs
         run: bundle exec rake spec
