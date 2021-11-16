@@ -111,6 +111,16 @@ RSpec.describe SimpleEnumeration do
     end
   end
 
+  describe '.camelcase' do
+    it { expect(described_class.camelcase('payment_status')).to eql('PaymentStatus') }
+  end
+
+  describe '.underscore' do
+    it { expect(described_class.underscore('PaymentStatus')).to eql('payment_status') }
+    it { expect(described_class.underscore('Payments::Status')).to eql('payments/status') }
+    it { expect(described_class.underscore('ExternalUsers::Payments::Status')).to eql('external_users/payments/status') }
+  end
+
   it 'has a version number' do
     expect(SimpleEnumeration::VERSION).not_to be nil
   end

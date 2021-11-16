@@ -224,7 +224,7 @@ The I18n strings are located on `simple_enumeration.<enumeration_name>.<value>.t
 ```yaml
 pl:
   simple_enumeration:
-    payments_status:
+    payment_status:
       unpaid:
         text: "Nieopłacone"
         color: yellow
