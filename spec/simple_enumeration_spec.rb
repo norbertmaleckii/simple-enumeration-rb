@@ -61,7 +61,7 @@ RSpec.describe SimpleEnumeration do
         Class.new do
           extend SimpleEnumeration
 
-          define_simple_enumeration :payment_status, with: PaymentStatusEnumeration
+          define_simple_enumeration :payment_status, with: 'PaymentStatusEnumeration'
 
           attr_accessor :payment_status
 

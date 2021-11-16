@@ -47,6 +47,7 @@ RSpec.describe SimpleEnumeration::Entity do
           param
           option
           name
+          i18n_scope
         ]
       )
     end
@@ -273,6 +274,7 @@ RSpec.describe SimpleEnumeration::Entity do
           param
           option
           name
+          i18n_scope
           finished_collection
           finished_collection_for_select
           finished_collection_humanized

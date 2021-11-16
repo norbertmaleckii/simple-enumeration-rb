@@ -6,6 +6,13 @@ module SimpleEnumeration
 
     option :converted_value
 
+    def self.i18n_scope
+      [
+        'simple_enumeration',
+        SimpleEnumeration.underscore(name.gsub('Enumeration', ''))
+      ].join('.')
+    end
+
     def self.define_basic_collection(*definitions)
       Collections::BasicFactory.call(
         enum_class: self,

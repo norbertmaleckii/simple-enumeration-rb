@@ -52,10 +52,7 @@ module SimpleEnumeration
       I18n.t(
         value,
         raise: true,
-        scope: [
-          'simple_enumeration',
-          enum_class.name.gsub('Enumeration', '').underscore
-        ].join('.')
+        scope: enum_class.i18n_scope
       )
     end
   end

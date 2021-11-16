@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'active_support/core_ext/string/inflections'
 require 'callee'
 require 'dry/initializer'
 require 'i18n'
@@ -22,5 +21,19 @@ require_relative 'simple_enumeration/define_simple_enumeration'
 module SimpleEnumeration
   def self.extended(receiver)
     receiver.extend DefineSimpleEnumeration
+  end
+
+  def self.camelcase(string)
+    string.split('_').map do |w|
+      w[0] = w[0].upcase
+      w
+    end.join
+  end
+
+  def self.underscore(string)
+    string
+      .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+      .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+      .downcase
   end
 end
