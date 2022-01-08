@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_enumeration (0.3.0)
+    simple_enumeration (0.3.1)
       i18n
 
 GEM
