@@ -11,7 +11,7 @@ module SimpleEnumeration
     def self.i18n_scope
       [
         'simple_enumeration',
-        SimpleEnumeration.underscore(name.gsub('Enumeration', ''))
+        Utils.underscore(name.gsub('Enumeration', ''))
       ].join('.')
     end
 

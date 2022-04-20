@@ -165,7 +165,7 @@ Initially, there is no special dsl extension, but we can simply do that:
 # ActiveRecord class
 #
 class Order < ApplicationRecord
-  extend SimpleEnumeration
+  extend SimpleEnumeration::ObjectHelper
 
   define_simple_enumeration :payment_status
 end
@@ -173,7 +173,7 @@ end
 # Plain Ruby class
 #
 class Order
-  extend SimpleEnumeration
+  extend SimpleEnumeration::ObjectHelper
 
   define_simple_enumeration :payment_status
 

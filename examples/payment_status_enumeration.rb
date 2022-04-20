@@ -30,7 +30,7 @@ class PaymentStatusEnumeration < SimpleEnumeration::Entity
 end
 
 class Order
-  extend SimpleEnumeration
+  extend SimpleEnumeration::ObjectHelper
 
   define_simple_enumeration :payment_status
 
