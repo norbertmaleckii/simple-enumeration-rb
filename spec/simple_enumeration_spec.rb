@@ -170,6 +170,6 @@ RSpec.describe SimpleEnumeration do
   end
 
   it 'has a version number' do
-    expect(SimpleEnumeration::VERSION).not_to be nil
+    expect(SimpleEnumeration::VERSION).not_to be_nil
   end
 end

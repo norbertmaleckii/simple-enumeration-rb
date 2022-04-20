@@ -5,6 +5,11 @@ require:
 AllCops:
   NewCops: enable
   TargetRubyVersion: 2.7
+  Exclude:
+    - ".bundle/**/*"
+    - ".github/**/*"
+    - "bin/**/*"
+    - "vendor/**/*"
 
 Layout/LineLength:
   Max: 150
