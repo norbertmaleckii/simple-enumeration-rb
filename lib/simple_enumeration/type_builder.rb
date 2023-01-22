@@ -20,6 +20,7 @@ module SimpleEnumeration
       )
     end
 
+    # TODO: Use pattern matching here to detect integer values
     def factory_klass
       if definition.is_a?(Hash)
         Types::HashFactory
